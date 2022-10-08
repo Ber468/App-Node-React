@@ -1,3 +1,3 @@
 git add .
-git commit -m "Listagem e criação de usuários"
+git commit -m "Tratamento de erros"
 git push -u origin main
