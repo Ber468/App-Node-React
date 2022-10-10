@@ -16,6 +16,6 @@ usersRoutes.put("/update", updateUsersController);
 
 usersRoutes.delete("/delete", deleteUsersController);
 
-usersRoutes.get("/findById:id", findByIdUsersController);
+usersRoutes.get("/findById/:id", findByIdUsersController);
 
 export default usersRoutes;
