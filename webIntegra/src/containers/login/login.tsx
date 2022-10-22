@@ -1,23 +1,30 @@
-import { TextField, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { CurrencyCircleDollar } from 'phosphor-react';
+import { FormProvider } from 'react-hook-form';
+
+import { Fields } from './fields/fields';
 import { Form, Header, LoginContainer } from './login.styles';
+import useLogin from './useLogin';
 
 const Login = () => {
+  const { methods, handleLogin } = useLogin();
+
   return (
     <LoginContainer>
       <Header>
-      <CurrencyCircleDollar size={64} />
-      <div>
-      <Typography variant="h4" fontWeight={700}>
-        Data Integra Finance
-      </Typography>
-      <Typography variant="subtitle1">Faça login e começe a usar</Typography>
-      </div>
+        <CurrencyCircleDollar size={64} />
+        <div>
+          <Typography variant="h4" fontWeight={700}>
+            Data Integra Finance
+          </Typography>
+          <Typography variant="subtitle1">Faça login e começe a usar</Typography>
+        </div>
       </Header>
-      <Form>
-        <TextField label="Email" />
-        <TextField label="Senha" />
-      </Form>
+      <FormProvider {...methods}>
+        <Form onSubmit={handleLogin}>
+          <Fields />
+        </Form>
+      </FormProvider>
     </LoginContainer>
   );
 };

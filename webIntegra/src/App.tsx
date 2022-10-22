@@ -27,7 +27,18 @@ const App = () => {
         defaultProps: {
           variant: 'filled',
           size: 'small',
-    }
+    },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+        },
+      },
+      defaultProps: {
+        variant: 'contained',
+        size: 'medium',
+      },
     },
     },
   });

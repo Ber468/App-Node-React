@@ -8,6 +8,7 @@ export const LoginContainer = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
+  gap: ${toRem(16)};
 
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
