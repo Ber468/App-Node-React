@@ -5,8 +5,12 @@ import { transactionsRoutes } from "./transactions.routes";
 import { JwtMiddleware } from "../middlewares/jwt";
 import { logoutController } from "../controllers/authentication/logoutController";
 import { cnpjController } from "../service/cnpjController";
+import cors from "cors";
 
 const routes = Router();
+
+// Liberar origens das requisições
+routes.use(cors({ origin: "*" }));
 
 //Rota para ver se a api está funcionando
 routes.get("/", (req, res) => {
