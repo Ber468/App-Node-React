@@ -4,15 +4,29 @@ import Dashboard from '../containers/dashboard/dashboard';
 import Login from '../containers/login/login';
 
 const Router = () => {
+  // Se está autenticado ou não no sistema
+  const isAuthenticated = false;
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Layout />}>
+          {isAuthenticated ? (
+            <>
+              <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route path="*" element={<Navigate to="/login" />} /> 
-        <Route path="*" element={<Login />} />
+              <Route path="/" element={<Navigate to="/dashboard" />} />
+              <Route path="*" element={<Navigate to="/dashboard" />} />
+            </>
+          ) : (
+            <>
+              <Route path="/login" element={<Login />} />
+
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="*" element={<Navigate to="/login" />} />
+            </>
+          )}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

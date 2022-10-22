@@ -22,6 +22,14 @@ const App = () => {
         color: '#fffefc',
       },
     },
+    components: {
+      MuiTextField: {
+        defaultProps: {
+          variant: 'filled',
+          size: 'small',
+    }
+    },
+    },
   });
 
   return (
