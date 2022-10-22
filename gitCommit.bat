@@ -1,3 +1,3 @@
 git add .
-git commit -m "Endpoint de Transactions"
+git commit -m "Implementacao de testes e cnpj"
 git push -u origin main

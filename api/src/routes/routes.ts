@@ -3,6 +3,8 @@ import usersRoutes from "./users.routes";
 import { loginController } from "../controllers/authentication/loginController";
 import { transactionsRoutes } from "./transactions.routes";
 import { JwtMiddleware } from "../middlewares/jwt";
+import { logoutController } from "../controllers/authentication/logoutController";
+import { cnpjController } from "../service/cnpjController";
 
 const routes = Router();
 
@@ -19,6 +21,12 @@ routes.use("/users", usersRoutes);
 
 // Filtro de autenticação
 routes.use(JwtMiddleware);
+
+// Endpoint para buscar dados do cnpj especificado
+routes.get("/cnpj/:cnpj", cnpjController);
+
+// Rota logout
+routes.post("/logout", logoutController);
 
 // Rota para o CRUD de transações
 routes.use("/transactions", transactionsRoutes);
