@@ -1,5 +1,6 @@
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material';
 import  Router  from './routes/router';
+import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
   const theme = createTheme({
@@ -16,11 +17,17 @@ const App = () => {
         paper: '#1D2D44',
       },
     },
+    typography: {
+      allVariants: {
+        color: '#fffefc',
+      },
+    },
   });
 
   return (
 		<StyledEngineProvider injectFirst>    
 			<ThemeProvider theme={theme}>
+      <GlobalStyles />
 	      <Router />
 	    </ThemeProvider>
 		</StyledEngineProvider>
