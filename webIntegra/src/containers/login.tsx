@@ -1,5 +1,9 @@
+import { Typography } from '@mui/material';
+
 const Login = () => {
-    return <>Tela de Login</>;
+    return <>
+       <Typography variant="h4">Login</Typography> 
+    </>;
 };
 
 export default Login;
