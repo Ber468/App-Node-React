@@ -1,3 +1,3 @@
 git add .
-git commit -m "Implementacao de loading no login"
+git commit -m "Melhorias no login"
 git push -u origin main

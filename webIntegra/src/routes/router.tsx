@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from '../components/layout/layout';
 import Dashboard from '../containers/dashboard/dashboard';
 import Login from '../containers/login/login';
+import { useAuth } from '../store/auth/auth';
 
 const Router = () => {
   // Se está autenticado ou não no sistema
-  const isAuthenticated = false;
+  const { isAuthenticated } = useAuth();
 
   return (
     <BrowserRouter>

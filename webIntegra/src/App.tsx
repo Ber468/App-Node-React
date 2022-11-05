@@ -1,4 +1,5 @@
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 import  Router  from './routes/router';
 import { GlobalStyles } from './styles/GlobalStyles';
 
@@ -46,8 +47,17 @@ const App = () => {
   return (
 		<StyledEngineProvider injectFirst>    
 			<ThemeProvider theme={theme}>
+      <SnackbarProvider
+          maxSnack={3}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          autoHideDuration={2000}
+        >
       <GlobalStyles />
 	      <Router />
+        </SnackbarProvider>
 	    </ThemeProvider>
 		</StyledEngineProvider>
   );
